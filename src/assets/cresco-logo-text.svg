@@ -1,0 +1,15 @@
+<svg width="400" height="80" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .logo-text { 
+        font-family: 'Inter', sans-serif; 
+        font-weight: 300; 
+        font-size: 48px; 
+        fill: #2c2c2c; 
+        letter-spacing: 0.2em;
+      }
+    </style>
+  </defs>
+  
+  <text x="200" y="50" text-anchor="middle" class="logo-text">CRESCO</text>
+</svg>
