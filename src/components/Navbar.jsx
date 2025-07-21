@@ -54,10 +54,12 @@ const Navbar = () => {
                   <a className="text-white uppercase text-sm tracking-wider hover:text-gray-300 transition-colors" href="/menus">Menus</a>
                 </li>
                 <li className="relative group">
-                  <button className="text-white uppercase text-sm tracking-wider hover:text-gray-300 transition-colors flex items-center">
-                    About <span className="ml-1 text-xs">▼</span>
-                  </button>
-                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden group-hover:block">
+                  <div className="relative">
+                    <button className="text-white uppercase text-sm tracking-wider hover:text-gray-300 transition-colors flex items-center">
+                      About <span className={`ml-1 text-xs ${isScrolled ? '' : 'transform rotate-180'}`}>▼</span>
+                    </button>
+                  </div>
+                  <div className={`absolute left-0 ${isScrolled ? 'mt-2' : 'bottom-full mb-2'} w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out`}>
                     <ul>
                       <li><a className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="/about">About</a></li>
                       <li><a className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="/story">Our Story</a></li>
