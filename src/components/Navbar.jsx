@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../assets/logo2.png";
+import Logo from "../assets/logo2.PNG";
 
 // Navbar link data object
 const navbarLinks = [
