@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ScrollArrow = ({ targetSelector = '.food-grid' }) => {
+const ScrollArrow = ({ targetSelector = '#section-image' }) => {
   const handleClick = (e) => {
     e.preventDefault();
     const targetSection = document.querySelector(targetSelector);

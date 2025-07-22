@@ -1,27 +1,40 @@
 import React from 'react';
 import { FaInstagram, FaFacebook, FaTwitter, FaYelp } from 'react-icons/fa';
+import pattern2 from '../assets/Pattern2.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-black text-white py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+    <footer 
+      className="text-white py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${pattern2})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        position: 'relative',
+        textShadow: '0 1px 2px rgba(0,0,0,0.8)'
+      }}
+    >
+      <div className="absolute inset-0 bg-black/80 z-0"></div>
+      <div className="relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Hours */}
           <div>
-            <h3 className="text-lg font-medium mb-4 uppercase tracking-wider">Hours</h3>
-            <div className="space-y-2 text-gray-300">
-              <p>Monday - Thursday: 5:00 PM - 10:00 PM</p>
-              <p>Friday - Saturday: 5:00 PM - 11:00 PM</p>
-              <p>Sunday: 5:00 PM - 9:00 PM</p>
+            <h3 className="text-xl font-semibold mb-4 uppercase tracking-wider text-white">Hours</h3>
+            <div className="space-y-2 text-white">
+              <p className="text-white">Monday - Thursday: 5:00 PM - 10:00 PM</p>
+              <p className="text-white">Friday - Saturday: 5:00 PM - 11:00 PM</p>
+              <p className="text-white">Sunday: 5:00 PM - 9:00 PM</p>
             </div>
           </div>
           
           {/* Location */}
           <div>
-            <h3 className="text-lg font-medium mb-4 uppercase tracking-wider">Location</h3>
-            <address className="not-italic text-gray-300">
+            <h3 className="text-xl font-semibold mb-4 uppercase tracking-wider text-white">Location</h3>
+            <address className="not-italic text-white">
               <p>123 Restaurant Row</p>
               <p>New York, NY 10001</p>
               <p className="mt-2">
@@ -39,20 +52,20 @@ const Footer = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-medium mb-4 uppercase tracking-wider">Quick Links</h3>
+            <h3 className="text-xl font-semibold mb-4 uppercase tracking-wider text-white">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="/menus" className="text-gray-300 hover:text-white transition-colors">Menus</a></li>
-              <li><a href="/private-events" className="text-gray-300 hover:text-white transition-colors">Private Events</a></li>
-              <li><a href="/gift-cards" className="text-gray-300 hover:text-white transition-colors">Gift Cards</a></li>
-              <li><a href="/careers" className="text-gray-300 hover:text-white transition-colors">Careers</a></li>
-              <li><a href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
+              <li><a href="/menus" className="text-white hover:text-white transition-colors">Menus</a></li>
+              <li><a href="/private-events" className="text-white hover:text-white transition-colors">Private Events</a></li>
+              <li><a href="/gift-cards" className="text-white hover:text-white transition-colors">Gift Cards</a></li>
+              <li><a href="/careers" className="text-white hover:text-white transition-colors">Careers</a></li>
+              <li><a href="/contact" className="text-white hover:text-white transition-colors">Contact Us</a></li>
             </ul>
           </div>
           
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-medium mb-4 uppercase tracking-wider">Newsletter</h3>
-            <p className="text-gray-300 mb-4">Subscribe for updates and special offers</p>
+            <h3 className="text-xl font-semibold mb-4 uppercase tracking-wider text-white">Newsletter</h3>
+            <p className="text-white mb-4">Subscribe for updates and special offers</p>
             <form className="flex">
               <input 
                 type="email" 
@@ -100,6 +113,7 @@ const Footer = () => {
                 Terms of Service
               </a>
             </div>
+          </div>
           </div>
         </div>
       </div>
