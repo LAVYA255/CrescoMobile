@@ -108,7 +108,7 @@ const Home = () => {
       {/* Virtual Tour Hero Section with Logo Overlay */}
       <section
         id="virtual-tour-hero"
-        className="w-full min-h-screen bg-black flex items-center justify-center relative overflow-hidden p-0 m-0"
+        className="w-full min-h-screen bg-black flex items-center justify-center relative overflow-hidden p-0 m-0 pt-20 md:pt-24"
       >
         <div className="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-center z-10 pointer-events-none">
           <img

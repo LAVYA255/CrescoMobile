@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo2.png";
 
 // Navbar link data object
 const navbarLinks = [
@@ -44,10 +44,10 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed w-full z-50 backdrop-blur-md transition-all duration-300 ${
+      className={`fixed w-full z-[10001] backdrop-blur-md transition-all duration-300 ${
         isScrolled
           ? "top-0 bg-black/40 shadow-lg py-4"
-          : "bottom-0 bg-black/20 py-3.5"
+          : "top-0 bg-black/20 py-3.5"
       }`}
     >
       {/* Desktop Navigation */}
@@ -117,37 +117,60 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Panel */}
+      {/* Mobile Menu Panel - Full Black, Logo on Top, Items from Top to Bottom */}
       <div
-        className={`fixed inset-0 bg-black/95 z-40 flex items-center justify-center transition-all duration-300 ease-in-out transform ${
+        className={`fixed inset-0 bg-black z-[9999] flex flex-col transition-all duration-300 ease-in-out overflow-y-auto ${
           isMobileMenuOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-full pointer-events-none"
-        }`}
+            ? "opacity-100 pointer-events-auto translate-y-0"
+            : "opacity-0 pointer-events-none -translate-y-full"
+        } md:hidden`}
+        style={{ minHeight: "100vh", minWidth: "100vw" }}
       >
-        <div className="w-full max-w-md px-4 py-20">
-          <nav className="text-center" aria-label="Mobile main">
-            <ul className="space-y-6">
-              {navbarLinks.map((link) => (
-                <li key={link.id}>
-                  <a
-                    className="block text-white text-xl py-3 hover:text-gray-300 transition-colors"
-                    href={link.href}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-              <li className="mt-8">
+        {/* Close button */}
+        <button
+          className="absolute top-6 right-6 text-white text-4xl focus:outline-none z-50"
+          onClick={toggleMobileMenu}
+          aria-label="Close navigation menu"
+        >
+          &times;
+        </button>
+        {/* Logo at the top - larger on mobile menu */}
+        <div className="w-full flex justify-center pt-4 pb-4">
+          <img
+            src={Logo}
+            alt="Cresco"
+            className="h-36 w-auto md:h-16 transition-all duration-300 drop-shadow-lg mx-auto"
+            style={{ maxWidth: "80vw", objectFit: "contain", display: "block" }}
+          />
+        </div>
+        {/* Menu items vertically from top to bottom */}
+        <nav
+          className="flex-1 w-full flex flex-col items-center"
+          aria-label="Mobile main"
+        >
+          <ul className="flex flex-col items-center w-full gap-2 mt-0 pb-12">
+            {navbarLinks.map((link) => (
+              <li key={link.id} className="w-full">
                 <a
-                  className="inline-block bg-[#a52a2a] text-white text-xl px-8 py-3 rounded hover:bg-[#8c2323] transition-colors"
-                  href="/reservations"
+                  className="block w-full text-white text-xl py-5 text-center uppercase tracking-wider hover:bg-neutral-900 hover:text-[#a52a2a] transition-colors"
+                  href={link.href}
+                  onClick={toggleMobileMenu}
                 >
-                  Reservations
+                  {link.label}
                 </a>
               </li>
-            </ul>
-          </nav>
-        </div>
+            ))}
+            <li className="w-full flex justify-center mt-6">
+              <a
+                className="bg-[#a52a2a] text-white text-xl px-8 py-4 rounded-lg uppercase tracking-wider hover:bg-[#8c2323] transition-colors"
+                href="/reservations"
+                onClick={toggleMobileMenu}
+              >
+                Reservations
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );

@@ -190,7 +190,7 @@ const Menu = () => {
         backgroundColor: "#000",
         backgroundImage: `url(${pattern2})`,
         backgroundRepeat: "repeat-y",
-        backgroundSize: "100% 850px",
+        backgroundSize: "contain",
         backgroundPosition: "top center",
       }}
     >
